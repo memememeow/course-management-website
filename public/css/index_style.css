@@ -1,0 +1,113 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: url("../img/courseBackground.jpg");
+    background-size: cover
+}
+
+#adminModel {
+    margin-top: 10px;
+}
+
+#jumbotron {
+    background-image: url("../img/jumbotronBackground.jpg");
+    background-size: cover;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    z-index: 2;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+}
+
+#loginIcon {
+    width: 40px;
+    height: 40px;
+}
+
+#timetables {
+    min-height: 600px;
+    overflow: auto;
+}
+
+#leftWrapper {
+    min-height: 600px;
+    padding: 0px;
+}
+
+#courseList {
+    overflow: auto;
+    height: 800px;
+}
+
+#courseListWrapper {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#scheduleF {
+    background-color: aliceblue;
+}
+
+#scheduleS {
+    background-color: aliceblue;
+}
+
+#workloadS {
+    margin-left: 5px;
+}
+
+#workloadF {
+    margin-left: 5px;
+}
+
+.searchWrapper {
+    position: relative;
+}
+
+
+th {
+    width: 5px;
+}
+
+#profileImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    float: right;
+    border: solid white;
+    position: fixed;
+    z-index: 3;
+    top: 20px;
+    right: 20px;
+  }
+
+
+#navbar {
+    position: fixed;
+    top: -10px;
+    width: 100%;
+    z-index: 1;
+    height: 80px;
+}
+
+.nav-link {
+    color: snow;
+    font-size: 15px;
+    font-family: Georgia, serif;
+}
+
+#navlist {
+    float: right;
+}
+
+#wrapper {
+    margin-top: 200px;
+}

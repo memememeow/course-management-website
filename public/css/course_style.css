@@ -1,0 +1,284 @@
+/* style for fixed position header above */
+#profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: right;
+  border: solid white;
+  position: fixed;
+  z-index: 3;
+  top: 20px;
+  right: 20px;
+}
+
+#navlist {
+  float: right;
+}
+
+/* #mailBoxLink {
+  /* padding-top: 25px; */
+  /* margin-right: 120px;
+} */
+
+.nav-link {
+  color: snow;
+  font-family: Georgia, serif;
+}
+
+
+#navbar {
+  position: fixed;
+  top: -10px;
+  width: 100%;
+  z-index: 1;
+  height: 80px;
+}
+
+#jumbotron {
+    background-image: url("../img/jumbotronBackground.jpg");
+    background-size: cover;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-left: 0;
+    z-index: 2;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+}
+
+#titleName {
+  margin-left: 100px;
+}
+
+.dropdown {
+  position: fixed;
+  top: 100px;
+  right: 190px;
+  display: inline-block;
+  z-index: 6;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #25252D;
+  min-width: 180px;
+  min-height: 200px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: snow;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: Gray;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* style for main body part */
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url("../img/courseBackground.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* style for section table */
+table {
+  border: 2px solid grey;
+}
+
+tr {
+  border: 2px solid grey;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.container {
+  top: 220px;
+  margin-bottom: 180px;
+  position: relative;
+  border-radius: 25px;
+  background-color:rgba(255, 255, 255, 0.7);
+}
+
+/* display friend recmmondation beside the course information */
+#courseCont {
+  margin-left: 55px;
+  width: 60%;
+  float: left;
+  padding-left: 50px;
+}
+
+#courseDescription, #term {
+  font-family: Times, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.sectionHeader {
+  font-family: Times, "Times New Roman", serif;
+  font-size: 22px;
+}
+
+#friendCont {
+  margin-left: 15px;
+  margin-right: 0;
+  padding-top: 20px;
+  width: 20%;
+  display: inline-block;
+  height: 200px;
+  overflow-y: auto;
+}
+
+#courseHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#courseName {
+  color: #343448;
+  font-family: Times, "Times New Roman", serif;
+  font-size: 40px;
+}
+
+#courseSection {
+  /* margin-bottom: 180px; */
+  padding-bottom: 50px;
+}
+
+.friendImg {
+  padding-left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* style for comments and rating stars at bottom */
+#commmentBlock {
+  margin-top: 100px;
+}
+
+#courseRating {
+  width: 100%;
+  color: DimGray;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 80%;
+  display: inline-block;
+}
+
+#courseCommentHeader {
+  color: DimGray;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  /* font-family: Verdana, Arial, Helvetica, sans-serif; */
+  margin-right: 10px;
+  width: 70%;
+
+  float: left;
+}
+
+.ratingStars {
+  margin-right: 10px;
+  float: right;
+  display: inline-block;
+}
+
+#conclusion {
+  font-family: Georgia, serif;
+  float: right;
+  font-size: 20px;
+}
+
+#courseFinalRate {
+  height: 40px;
+}
+
+.fa {
+  color: LightGrey;
+}
+
+.checked {
+  color: Gold;
+}
+
+.blue {
+  color: DodgerBlue;
+  font-family: cursive;
+  font-size: 120%;
+}
+
+#newComment {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+#pssCommHeaser {
+  font-size: 20px;
+}
+
+#inputRatingStars {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  color: grey;
+  font-family: Georgia, serif;
+  border: 1px solid Grey;
+  width: 100%;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+#commentButton {
+  font-family: Georgia, serif;
+  margin-left: 25px;
+}
+
+#pastComments{
+  width: 100%;
+  margin-top: 40px;
+  padding-bottom: 100px;
+  display: inline-block;
+}
+
+.comment {
+  font-family: Georgia, serif;
+  width: 100%;
+  border: 1px solid Grey;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.commenterImg {
+  float: left;
+  padding-left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.grey {
+  font-family: Georgia, serif;
+  padding-left: 20px;
+  color: grey;
+}

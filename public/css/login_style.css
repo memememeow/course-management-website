@@ -1,0 +1,36 @@
+body {
+    background-image: url("../img/courseBackground.jpg");
+    background-size: cover;
+}
+
+#icon {
+    position:relative;
+    margin-left: 115px;
+    width: 50px;
+    height: 50px;
+}
+
+#title {
+    margin-bottom: 50px;
+}
+
+#login input {
+    margin-bottom: 10px;
+}
+
+#reminder {
+    margin-top: 60px;
+}
+
+#regButton {
+    margin-top: 5px;
+}
+
+#loginPage {
+    background-color: aliceblue;
+    margin: 80px auto;
+    width: 300px;
+    min-height: 500px;
+    padding: 15px 10px 15px;
+    border-radius: 5px;
+}

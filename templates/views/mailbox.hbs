@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>PECAN</title>
+    <!-- Link to the style sheet should be in the head session -->
+    {{>bootstrapJqueryFont}}
+    <link rel="stylesheet" type="text/css" href="/css/mailbox_style.css">
+  </head>
+  <body>
+  {{>navbar}}
+
+   <div id="jumbotron" class="jumbotron jumbotron-fluid">
+        <form class="form-inline justify-content-between justify-content-between">
+            <span class="display-4 d-none d-lg-inline strong" id="titleName">PECAN<span class="lead d-none d-lg-inline"> Schedule And Share</span></span>
+        </form>
+    </div>
+
+    <div id="navi">
+      <ul class="nav flex-column" id="navBar">
+        <li class="nav-item">
+          <a class="nav-link active" href="#top">send new messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sendMail">Inbox</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mailsSent">Sent</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="mainContainer">
+      <div class="container" id="sendMail">
+        <h3 id="title">Send a message</h3>
+        <div id="sendTo">
+          Send to: <input type="text" name="userName" placeholder="receiver's User Name" id="receiverName">
+        </div>
+        <form id="inputMail">
+          <textarea id="inputContent" name="message" rows="5" cols="60"></textarea>
+        </form>
+        <input type="button" class="btn btn-outline-primary btn-sm" id="sendButton" value="send">
+
+      </div>
+
+      <div class="container" id="inbox">
+        <h3 id="title">Inbox</h3>
+      </div>
+
+      <div class="container" id="mailsSent">
+        <h3 id="title">Messages Sent</h3>
+      </div>
+    </div>
+
+    {{>bootstrapJS}}
+    <script src="/js/data.js"></script>
+  <script type="text/javascript" src="/js/request.js"></script>
+  <script type="text/javascript" src="/js/mailbox.js"></script>
+  </body>
+</html>

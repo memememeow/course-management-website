@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ 	  <meta charset="utf-8">
+    <title>PECAN</title>
+    {{>bootstrapJqueryFont}}
+    <link rel="stylesheet" href="/css/userprofile.css" >
+  </head>
+
+  <body>
+  <div>
+  {{>navbar}}
+    <div id="jumbotron" class="jumbotron jumbotron-fluid">
+        <form class="form-inline justify-content-between justify-content-between">
+            <span class="display-4 d-none d-lg-inline strong" id="titleName">PECAN<span class="lead d-none d-lg-inline"> Schedule And Share</span></span>
+        </form>
+    </div>
+
+  <div class="container emp-profile">
+      <form method="post">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="profile-img">
+                      <img src="/img/profileImg.png">
+                  </div>
+              </div>
+              <div class="col-md-6 smaller">
+                  <div class="profile-head taller">
+                      <h5 id="name">
+                      </h5>
+                      <h6>I am a <span id="year"> </span> year <span id="program"></span> student
+                      </h6>
+
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Time Table</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Profile</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="profile-work">
+                      <p>Current Course</p>
+                      <p >Work load: <span id="workload"></span></p>
+
+                      <a href="index">
+                          <span id="userTakingCourse"></span>
+                      </a>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="tab-content profile-tab" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Name</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p id="name"></p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Contact Email</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p id="email"></p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Program</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p id="program"></p>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Brief Intro</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p id="intro"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                          <table class="table" id='courseTable'>
+                              <tbody>
+                              <tr>
+                                  <th>
+                                      Course
+                                  </th>
+                                  <th>
+                                      Section
+                                  </th>
+                                  <th>
+                                      Time
+                                  </th>
+                                  <th>
+                                      Location
+                                  </th>
+                                  <th>
+                                      Instructor
+                                  </th>
+                              </tr>
+                              <!--<span id="courseTable"></span>>-->
+                              </tbody>
+                          </table>
+
+
+                      </div>
+                      <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="profile-tab">
+                          <form role="form">
+                              <hr class="colorgraph">
+                              <div class="row">
+                                  <div class="col-xs-12 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                          <input type="text" id="userInputEmail" name="email" class="form-control input-lg typeAble" placeholder="Email" tabindex="1">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-xs-12 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                          <input type="text" name="program" id="userInputProgram" class="form-control input-lg typeAble" placeholder="Program" tabindex="3">
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                          <input type="text" name="year" id="userInputYear" class="form-control input-lg typeAble" placeholder="Year" tabindex="4">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-xs-12 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                          <input type="password" name="password" id="userInputPassword" class="form-control input-lg" placeholder="Password" tabindex="5">
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                          <input type="password" name="password_confirmation" id="userInputPasswordConfirm" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-14 col-sm-12">
+                                  <div class="form-group">
+                                      <textarea class="form-control col-xs-3" placeholder="Self Intro" id="userInputIntro" rows="1"></textarea>
+                                  </div>
+                              </div>
+
+
+                      </div>
+                              <hr class="colorgraph">
+                              <div class="row">
+                                  <div class="col-xs-12 col-md-6"></div>
+                                  <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg submitProfile">Save</a></div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+    {{>bootstrapJS}}
+    <script src="/js/data.js"></script>
+	<script src="/js/request.js"></script>
+    <script src="/js/userProfile.js"></script>
+  </body>
+</html>

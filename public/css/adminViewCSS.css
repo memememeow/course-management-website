@@ -1,0 +1,164 @@
+.split {
+    /* height: 90%;
+    width: 50%; */
+    height: 70%;
+    width: 49%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    overflow-y: scroll;
+
+    /* new added */
+    top: 200px;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+}
+
+/* Control the left side */
+.left {
+    left: 10px;
+    padding-top: 0px;
+    overflow-y: hidden;
+}
+
+/* Control the right side */
+.right {
+    right: 10px;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+    text-align: left;
+    text-overflow: inherit;
+    overflow: hidden;
+    word-wrap: break-word;
+    margin: 0 10px 0 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#studentInput, #courseInput {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #F0FFFF;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+#courseInput {
+    margin-top: 10px;
+}
+#studentTable, #courseTbl {
+    display: block;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #F0FFFF;
+    font-size: 14px;
+    height:300px;  /*50px per row, set 8 rows default*/
+    overflow-y:auto;
+}
+
+thead{
+    width: 100%;
+    display:table;
+}
+tbody{
+    width: 100%;
+    display:table;
+    overflow-y: scroll
+}
+
+th, td {
+    text-align: center;
+    padding: 12px;
+    width: 33.3%;
+}
+
+tr {
+    border-bottom: 1px solid #F0FFFF;
+}
+
+
+thead.header, tr:hover {
+    background-color: #F0FFFF;
+}
+
+
+.left #courseCode:hover,.left #courseName:hover, .left #courseIntro:hover, .course:hover{
+    text-decoration: underline;
+    color: dodgerblue;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+h4{
+    border-bottom: 1px solid #cea7a7;
+}
+
+body{
+    background: url("../img/courseBackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#addSection, #newSecInputForm, .deleteSecBtn {
+    margin-top: 2px;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#secId{
+    display: inline-block;
+}
+
+#loginIcon {
+    width: 40px;
+    height: 40px;
+}
+
+#courseLstFuncBar{
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* New added -2019,04,03 */
+#jumbotron {
+    background-image: url("../img/jumbotronBackground.jpg");
+    background-size: cover;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-left: 0;
+    z-index: 2;
+    position: fixed;
+    top: 56px;
+    width: 100%;
+}
+
+#infoDisplay {
+    margin: 30px 20px;
+}
+
+#sectionTable {
+    border: 2px solid grey;
+}
+
+#navSearch {
+    background-color: rgb(51, 204, 255);
+    height: 60px;
+    padding-left: 30px;
+    position:fixed;
+    left:10px;
+    top:200px;
+    width: inherit;
+}
+
+#searchUser, #searchCourse {
+    padding: 80px 20px 100px;
+}

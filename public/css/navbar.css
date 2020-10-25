@@ -1,0 +1,17 @@
+#navbar {
+  position: fixed;
+  top: -10px;
+  width: 100%;
+  z-index: 1;
+  height: 80px;
+}
+
+.nav-link {
+  color: snow;
+  font-size: 15px;
+  font-family: Georgia, serif;
+}
+
+#navlist {
+  float: right;
+}

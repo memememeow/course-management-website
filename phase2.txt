@@ -1,0 +1,112 @@
+Phase2.txt	
+You can try to run the app on: "https://csc309phase2.herokuapp.com/". Note that you should also follow the instructions below and
+aviod typing things incorrectly. If you are using the app online, you must not use postman to send request to 
+initialize data. 
+
+If you want to run the code we posted on github locally, please use localhost:3000. To load data, use postman. Send two hardcoded reqeust /localhost:3000/hardcodeCourse and /localhost:3000/hardcodeUser. We did deploy our code to heroku although heroku is not connected to github.
+
+If registration fails, our web will return to the login view.
+
+We also assume that the admin will not remove himself.
+
+Overview of router:
+     ----  adminViewRouter.js
+		----get request, url: /admin/
+			This is a request when admin view is loaded, set req.session.user
+		---- get request, url: /admin/changeinfo/:name
+			This is a request sent when admin wants to change some user’s profile given user’s name
+		---- get request, url: /admin/:courseCode/:semester
+			This is a request to get a specific course given course’s code and semester
+		---- get request, url: /admin/allCourses
+			This is a request to get all courses from database
+		---- get request, url: /admin/allUsers
+			This is a request to get all users from database
+		---- post request, url: /admin/addCourse
+			This is a request to add a new course to database
+		---- delete request, url: /admin/user/:name
+			This is a request to delete a specific user from database given his name
+		---- delete request, url: /admin/course/:code/:section/:semester
+			This is a request to delete a specific course from database given  course’s code and semester
+
+
+     --  courseRouter.js
+		---- get request, url: /course/:code/:section/:semester
+			To get   a certain course object with code, section, semester as keys.
+		--- post request, url: /course/:code/:section/:semester
+			Get a certain course and push a new comment attached from request body to it.	
+
+     --  indexRouter.js
+		---- get request, url: /index
+			jump to the index i.e. timetable view
+		---- get request, url:/index/profile
+			render the userprofile view so that we can redirect to it
+		---- get request, url:/index/allusers
+			retrieve information of all users from the database
+		---- get request, url:/index/allcourses
+			retrieve information of all courses from the database
+		---- get request, url:/index/loadinfo
+			get information about the user who currently log in
+		---- post request, url:/index/add
+			add a course to a user and add a user to a course in database
+		---- delete request, url:/index/remove
+			remove a course from a user and remove a user form a course in databse
+     --  loginRouter.js
+		---- get post url:/userlogin
+			Get the name and password from request body and find if there is such user in database. Redirect to userprofile page if success.
+
+     --  mailboxRouter.js
+		---- post url:/add
+			Construct a new mail using data from request body and push it into current user’s sendbox and target user’s inbox.
+		
+
+     --  registerRouter.js
+		---- get request, url: register/
+			This is a request sent when register page is rendered.
+		---- post request, url: register/create
+			This is a request sent when a new user register his information in our database
+     --  userporfileRouter.js
+		---- get request, url: userprofile/
+			This is a request sent when user profile page was rendered.
+		---- get request, url: userprofile/mypage
+			This is a request sent to show current user.
+		---- post request, url: userprofile/update
+			This is a request sent to update a user’s information in database.
+
+	
+Each router file containes its routes for requests on that view.
+ 
+
+------------------------------------------------------------Purpose--------------------------------------------------
+Our web’s main purpose is to help students schedule an easy-to-view timetable and share it with other students.
+
+Once an ordinary user registers and logins into our web, he can see a blank timetable. Then the user can search for courses which he/she has interest in and add to timetable. While the user is searching, he can also click the course and jump to the corresponding course’s course view.
+ 
+For each view, we have a navbar. A user can go to timetable view, mailbox view, user profile view or logout by clicking PECAN and corresponding button on right. If current user is admin, there will be a green button said admin model to lead to admin functionality 
+
+
+---------------------------------------------Index (timetable) View----------------------------------------------
+At index view, you can search for users, access course information or manage your courses. After logging in, the previously added courses of the user will be automatically  displayed on the website. 
+As you type a user name in the search bar, you will see a dropdown menu containing names of possible users. By clicking the user’s name which is a link, you can access the user profile view and see this user’s information  including name and selected courses. 
+If you type the course code  in the search bar on right of the search bar for users, a drop-down menu will appear and display the courses you can add. In the dropdown menu, you can click add button to add a course and click info to jump to course view. After adding a course, the time slots of the newly added courses will appear on the timetable. The workload will be shown beside the title (Fall/Winter) of each time table.  Also, if you click the courses listed in the “Selected Courses” box, you can jump to the course view. To go back to the index view, just click the PECAN icon on left-top of the web page. If you log in as an admin, you can see a green admin model button in the navbar. By clicking the admin model, you can jump to the admin view. You can log out by clicking the logout link in the navbar. When you log in again, the previously added courses will be loaded automatically. To jump to mailbox view, click the mailbox link in the navbar.
+
+-----------------------------------------------------Admin view----------------------------------------------------
+At admin view, an admin can search all users and all courses by clicking “search user” or “search course”. As for users, admin can edit their profiles and admin can delete ordinary users. Regarding courses, admin can add/delete courses. Those changes will cause changes in backend database. If a student is enrolled in a course that is going to be deleted by admin, that user will be forced to drop that course. Similarly, if admin delete a user with some enrolled course, all user’s enrolled course will remove that user. Besides, admin can search for a course and click it to check it’s detailed information.
+Please do not add courses whose time will exceed the given timetable layout. When you input a new course code or course section, please do not include whitespace.
+
+-----------------------------------------------------Course view----------------------------------------------------
+In the course view, you can see the the section, semester and the time slots of a course. On right part of the course page, you can see the list of the users (including administrator) who selected this course. By clicking each user’s user name, the profile of the corresponding user will appear. 
+At the bottom of the webpage, you can input your comment and rate the course by clicking on stars. After rating the course, the average rate for this course will be recalculated. All the comments will be listed at the bottom. Note that one user can only comment once.
+
+-----------------------------------------------------Mailbox View----------------------------------------------------
+In mailbox view, a user can send mail to other user. If the current user is admin, admin can send information to all other users, doing broadcasting. 
+There are three boxes in middle. The first box provides a place for users to send mail. A user should first type in the receiver’s user name and then type in mail content. 
+When an admin wants to broadcast to all users, he/she should type “all” in the “send to” part. Then, click the “broadcasts” button to broadcast the mail. (Please do not click “send” button if the receiver’s name is all)
+In the middle box whose title is inbox, the user can see all the mail sent by other users. In the last box, you can see all the message the current user has ever sent.
+
+----------------------------------------------------Userprofile View-------------------------------------------------
+In userprofile view, we can see a user’s information (including name, studying area, email etc.)
+There are three tabs which are “About”, “Time Table” and “Edit Profile”. Click them to access the user’s information.
+By clicking the list of courses on the bottom left corner of user profile, the web is redirected to the index page which makes it easier for user to manage their workload.
+When you click “Edit Profile”, you will see a form where you can input new profile information. You do not need to fill every input but just input the information you want to change. Click save to update profile information. To see your changes, click “About” tab.
+
+

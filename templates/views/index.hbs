@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PECAN</title>
+        <link rel="stylesheet" type="text/css" href="/css/index_style.css">
+        {{>bootstrapJqueryFont}}
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+
+        {{>navbar}}
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <img src="/img/black.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                            <h3 class="media-heading" id="displayname"></h3>
+
+                        </center>
+                        <hr>
+                        <center>
+                            <span class="text-left"><strong>Contact: </strong><br>
+                                <span id="displayemail"></span></p>
+                            <br>
+                                <span class="text-left"><strong>Intro: </strong></span><br>
+                                <span id="displayintro"></span></p>
+                            <br>
+                                     <div id="courses">
+        <h4 class="title">Course Taken:</h4>
+        <table class="table" id='coursetable'>
+          <tbody>
+            <tr>
+              <th>
+                Course
+              </th>
+              <th>
+                Section
+              </th>
+              <th>
+                Time
+              </th>
+              <th>
+                Location
+              </th>
+              <th>
+                Instructor
+              </th>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+                            <br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jumbotron and search input -->
+        <div id="jumbotron" class="jumbotron jumbotron-fluid align-item-end">
+            <form class="form-inline justify-content-between justify-content-lg-around">
+                <span class="display-4 d-none d-lg-inline strong">PECAN</span>
+                <div id="searchUserWrapper" class="d-inline searchWrapper align-self-end">
+                    <input type="text" class="form-control ly-auto lx-auto" id="searchUser" placeholder="Search User">
+                </div>
+                <div id="searchCourseWrapper" class="d-inline searchWrapper align-self-end">
+                    <input type="text" class="form-control ly-auto lx-auto align-self-end" id="searchCourse" placeholder="Search Course">
+                </div>
+            </form>
+        </div>
+
+        <!-- grid system for list of selected courses and timetables of three semesters -->
+        <div id="wrapper" class="row">
+    
+                <div id="leftWrapper" class="col-12 col-lg-3">
+
+
+                    <div id="courseListWrapper" class="col-11">
+                        <h3>Selected Courses</h3>
+                        <div id="courseList" class="list-group border border-primary">
+                            <!-- <a href="#" class="list-group-item list-group-item-action list-group-item-success">Some FALL course</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Some WINTER course</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Some SUMMER course</a> -->
+                        </div>
+                    </div>
+
+                    <!-- <div id="descriptionWrapper" class="col-11">
+                        <h3>Course Introduction</h3>
+                        <div id="description" class="border border-primary">
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div id="timetables" class="col-12 col-lg-9">
+                    <form class="form-inline justify-content-start">
+                        <button type="button" class="btn btn-success">FALL</button>
+                        <span id="workloadF">Work Load: 0.0</span>
+                    </form>
+                    <table id="scheduleF" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">MON</th>
+                                <th scope="col">TUE</th>
+                                <th scope="col">WED</th>
+                                <th scope="col">THU</th>
+                                <th scope="col">FRI</th>
+                                <!-- <th scope="col">SAT</th>
+                                <th scope="col">SUN</th> -->
+                              </tr>
+                            </thead>
+                            <tbody id="scheduleBodyF">
+                              <tr id="8F">
+                                    <th scope="row">08:00-09:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                              </tr>
+                              <tr id="9F">
+                                    <th scope="row">09:00-10:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                              </tr>
+                              <tr id="10F">
+                                    <th scope="row">10:00-11:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                              </tr>
+                              <tr id="11F">
+                                    <th scope="row">11:00-12:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="12F">
+                                    <th scope="row">12:00-13:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="13F">
+                                    <th scope="row">13:00-14:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="14F">
+                                    <th scope="row">14:00-15:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="15F">
+                                    <th scope="row">15:00-16:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="16F">
+                                    <th scope="row">16:00-17:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="17F">
+                                    <th scope="row">17:00-18:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="18F">
+                                    <th scope="row">18:00-19:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="19F">
+                                    <th scope="row">19:00-20:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="20F">
+                                    <th scope="row">20:00-21:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                               <tr id="21F">
+                                    <th scope="row">21:00-22:00</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <!-- <td></td>
+                                    <td></td> -->
+                               </tr>
+                            </tbody>
+                        </table>
+
+                        <form class="form-inline justify-content-start">
+                            <button type="button" class="btn btn-warning">WINTER</button>
+                            <span id="workloadS">Work Load: 0.0</span>
+                        </form>
+
+                        <table id="scheduleS" class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">MON</th>
+                                    <th scope="col">TUE</th>
+                                    <th scope="col">WED</th>
+                                    <th scope="col">THU</th>
+                                    <th scope="col">FRI</th>
+                                    <!-- <th scope="col">SAT</th>
+                                    <th scope="col">SUN</th> -->
+                                  </tr>
+                                </thead>
+                                <tbody id="scheduleBodyS">
+                                  <tr id="8S">
+                                        <th scope="row">08:00-09:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                  </tr>
+                                  <tr id="9S">
+                                        <th scope="row">09:00-10:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                  </tr>
+                                  <tr id="10S">
+                                        <th scope="row">10:00-11:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                  </tr>
+                                  <tr id="11S">
+                                        <th scope="row">11:00-12:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="12S">
+                                        <th scope="row">12:00-13:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="13S">
+                                        <th scope="row">13:00-14:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="14S">
+                                        <th scope="row">14:00-15:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="15S">
+                                        <th scope="row">15:00-16:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="16S">
+                                        <th scope="row">16:00-17:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="17S">
+                                        <th scope="row">17:00-18:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="18S">
+                                        <th scope="row">18:00-19:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="19S">
+                                        <th scope="row">19:00-20:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="20S">
+                                        <th scope="row">20:00-21:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                   <tr id="21S">
+                                        <th scope="row">21:00-22:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td></td>
+                                        <td></td> -->
+                                   </tr>
+                                </tbody>
+                              </table>
+                </div>
+        </div>
+
+
+        <!-- BOOTSTRAP header -->
+        {{>bootstrapJS}}
+        <script type="text/javascript" src="/js/request.js"></script>
+        <script type="text/javascript" src="/js/data.js"></script>
+        {{!-- <script type="text/javascript" src="../../models/course.js"></script> --}}
+        {{!-- <script type="text/javascript" src="../../models/user.js"></script> --}}
+        <script src="/js/index_interact.js"></script>
+    </body>
+</html>

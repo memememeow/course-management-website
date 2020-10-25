@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/login_style.css">
+    {{>bootstrapJqueryFont}}
+</head>
+<body>
+
+    <div id="loginPage">
+        <img src="/img/login-icon.png" id="icon">
+        <h2 class="text-center" id="title">Member Login</h1>
+        <form action="/userlogin" method="post">
+
+            <input type="text" class="form-control" id="username" name="name" required>
+
+            <input type="password" id="password" class="form-control" name="password" required>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="showPassword">
+                <label class="form-check-label" for="showPassword">Show password</label>
+            </div>
+            <button type="submit" id="loginButton" class="btn btn-primary btn-md btn-block">Log in</button>
+
+        </form>
+        <form id="register" action="/register" method="get">
+            <small id="reminder" class="form-text text-muted">Do not have an account ?</small>
+            <button type="submit" id="regButton" class="btn btn-primary btn-md btn-block">Register</button>
+        </form>
+    </div>
+
+    {{>bootstrapJS}}
+    <script type="text/javascript" src="/js/request.js"></script>
+    <script type="text/javascript" src="/js/login_interac.js"></script>
+    <script type="text/javascript" src="/js/data.js"></script>
+</body>
+</html>

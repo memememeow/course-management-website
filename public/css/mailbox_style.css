@@ -1,0 +1,249 @@
+a {
+  text-decoration: none;
+}
+
+/* style for fixed position header above */
+#profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: right;
+  border: solid white;
+  position: fixed;
+  z-index: 3;
+  top: 20px;
+  right: 20px;
+}
+
+/*#mailBoxLink {*/
+  /*!* padding-top: 25px; *!*/
+  /*margin-right: 10px;*/
+/*}*/
+
+/* #pageHeader {
+  color: snow;
+  font-family: Georgia, serif;
+} */
+
+/* #header {
+	padding: 25px;
+  width: 100%;
+	background-image: url("/img/black.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: 1;
+} */
+
+/*#navbar {*/
+  /*position: fixed;*/
+  /*!* top: 0px; *!*/
+  /*width: 100%;*/
+  /*z-index: 1;*/
+/*}*/
+
+#jumbotron {
+    background-image: url("../img/jumbotronBackground.jpg");
+    background-size: cover;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    z-index: 2;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+}
+
+#greeting {
+  color: snow;
+  font-family: Georgia, serif;
+  position: fixed;
+  top: 55px;
+  right: 150px;
+}
+
+/* style for navigation */
+#navi {
+  background-color: #25252D;
+  float: left;
+  height: 100%;
+  top: 60px;
+  position: fixed;
+  background-image: url("../img/black.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: auto;
+}
+
+#navBar {
+  padding-top: 150px;
+}
+
+/*#titleName {*/
+  /*margin-left: 100px;*/
+/*}*/
+
+/*.nav-link {*/
+  /*color: snow;*/
+  /*font-family: Georgia, serif;*/
+  /*width: 200px;*/
+  /*height: 50px;*/
+/*}*/
+
+
+/* style for main body part */
+body {
+	background-color: white;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url("../img/courseBackground.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 80%;
+  margin-left: 50px;
+   position: relative;
+  border-radius: 25px;
+  background-color:rgba(255, 255, 255, 0.7);
+}
+
+#mainContainer {
+  top: 200px;
+  left: 200px;
+  width: 80%;
+  position: relative;
+  display: inline-block;
+}
+
+#sendMail {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+#inbox {
+  margin-top: 10px;
+  padding-top: 20px;
+  display: inline-block;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#mailsSent {
+  margin-top: 10px;
+  padding-top: 20px;
+  display: inline-block;
+  margin-bottom: 180px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#sendTo {
+  font-family: Georgia, serif;
+  padding-left: 20px;
+}
+
+#receiverName {
+  font-family: Georgia, serif;
+  border: 1px solid Grey;
+  color: grey;
+  width: 400px;
+  border-radius: 5px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+#title {
+  font-family: Georgia, serif;
+  color: #25252D;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+textarea {
+  margin-top: 10px;
+  font-family: Georgia, serif;
+  border: 1px solid Grey;
+  width: 80%;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+#sendButton {
+  font-family: Georgia, serif;
+  margin-left: 20px;
+  width: 60px;
+  margin-bottom: 22px;
+  float: left;
+}
+
+#broadCastButton {
+  float:left;
+  font-family: Georgia, serif;
+  margin-left: 20px;
+  width: 100px;
+  margin-bottom: 22px;
+}
+
+
+.mail {
+  font-family: Georgia, serif;
+  width: 90%;
+  border: 1px solid Grey;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.senderImg {
+  float: left;
+  padding-left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.sender {
+  margin-right: 0;
+  width: 200px;
+}
+
+.delete {
+  margin-right: 20px;
+  float: right;
+}
+
+.deleteButton {
+  color: Navy;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.grey {
+  font-family: Georgia, serif;
+  padding-left: 20px;
+  color: grey;
+}
+
+
+#navbar {
+  position: fixed;
+  top: -10px;
+  width: 100%;
+  z-index: 1;
+  height: 80px;
+}
+
+.nav-link {
+  color: snow;
+  font-size: 15px;
+  font-family: Georgia, serif;
+}
+
+#navlist {
+  float: right;
+}

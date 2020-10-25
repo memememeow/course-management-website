@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>PECAN</title>
+        <!-- Link to the style sheet should be in the head session -->
+        {{>bootstrapJqueryFont}}
+        <link rel="stylesheet" type="text/css" href="/css/course_style.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  </head>
+
+  {{>navbar}}
+
+  {{!-- {{>profileDropdown}} --}}
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                  <h4 class="modal-title" id="myModalLabel"></h4>
+              </div>
+              <div class="modal-body">
+                  <center>
+                      <img src="/img/black.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                      <h3 class="media-heading" id="displayname"></h3>
+
+
+                  </center>
+                  <hr>
+                      <span class="text-left"><strong>Contact: </strong></span><br>
+                                <span id="displayemail"></span></p>
+                                <br>
+                  <span class="text-left"><strong>Intro: </strong></span><br>
+                                <span id="displayintro"></span></p>
+                                <br>
+                                     <div id="courses">
+        <h4 class="title">Course Taken:</h4>
+        <table class="table" id='coursetable'>
+          <tbody>
+            <tr>
+              <th>
+                Course
+              </th>
+              <th>
+                Section
+              </th>
+              <th>
+                Time
+              </th>
+              <th>
+                Location
+              </th>
+              <th>
+                Instructor
+              </th>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+                            <br>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+    <div id="jumbotron" class="jumbotron jumbotron-fluid">
+        <form class="form-inline justify-content-between justify-content-between">
+            <span class="display-4 d-none d-lg-inline strong" id="titleName">PECAN<span class="lead d-none d-lg-inline"> Schedule And Share</span></span>
+        </form>
+    </div>
+
+    <!-- <div id="courseInfo"> -->
+    <div class="container" id="courseCont">
+      <div id="courseHeader">
+        <h2 id="courseName"><strong>{{code}}-{{section}}-{{semester}}:{{name}}</strong></h2>
+      </div>
+
+      <div id="courseDescription">
+        <h5 class="sectionHeader"><strong>Course Description</strong></h5>
+        <p id="courseIntro">{{description}}.</p>
+      </div>
+
+      <div id="courseTerm">
+        <strong class="sectionHeader">Semester</strong>
+        <p id="term">{{semester}}</p>
+      </div>
+
+      {{!-- <div id="courseCampus">
+        <strong class="sectionHeader">Campus</strong>
+        <p id="campus">St. George</p>
+      </div> --}}
+
+      <h3 class="sectionHeader"><strong>Course Times</strong></h3>
+            {{{times}}}
+
+
+      <div id="commmentBlock">
+        <div id="courseRating">
+          <h4 id="courseCommentHeader">{{code}}: {{name}}</h4>
+          <div class="ratingStars" id="courseFinalRate">
+              {{courserate}}
+          </div>
+          <div id="conclusion">
+            Average <span class="blue" id="courseRate">{{courserate}}.</span> with total <span class="blue" id="totalRating">{{totallength}}</span> ratings.
+          </div>
+        </div>
+
+        <div id="newComment">
+          <strong class="grey" value="Leave your comments here."></strong>
+
+          <form id="inputComment">
+            <div id="inputRatingStars">
+              <span class="fa fa-star fa-lg button star"></span>
+              <span class="fa fa-star fa-lg button star"></span>
+              <span class="fa fa-star fa-lg button star"></span>
+              <span class="fa fa-star fa-lg button star"></span>
+              <span class="fa fa-star fa-lg button star"></span>
+            </div>
+
+            <textarea id="inputContent" name="message" rows="5" cols="60" placeholder="Leave your comments here."></textarea>
+            <input type="button" class="btn btn-primary btn-sm" id="commentButton" value="Comment and Rate">
+          </form>
+        </div>
+
+        <div id="pastComments">
+          <strong class="grey" id="pssCommHeaser">Past Comments:</strong>
+            {{{comments}}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="friendCont">
+      <strong class="sectionHeader">Users taking this course</strong>
+        <ul id="friendList">
+          {{{friends}}}
+        </ul>
+    </div>
+
+    {{>bootstrapJS}}
+    {{!-- <script type="text/javascript" src="/js/data.js"></script> --}}
+  <script src="/js/request.js"></script>
+  <script src="/js/course.js"></script>
+  </body>
+</html>

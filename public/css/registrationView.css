@@ -1,0 +1,66 @@
+
+body, html{
+	height: 100%;
+	background-repeat: no-repeat;
+	background-color: #d3d3d3;
+	font-family: 'Oxygen', sans-serif;
+}
+
+body {
+	background-image: url("../img/courseBackground.jpg");
+	background-size: cover;
+}
+.main{
+	margin-top: 70px;
+}
+
+h1.title {
+	font-size: 30px;
+	font-family: 'Passion One', cursive;
+	font-weight: 300;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+	font-size: 11px;
+	padding-top: 3px;
+}
+
+.main-login{
+	background-color: #fff;
+	/* shadows and rounded borders */
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-center{
+	max-width: 330px;
+	padding: 40px 40px;
+	margin: 0 auto 80px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}

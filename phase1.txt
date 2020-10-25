@@ -1,0 +1,62 @@
+Valid credentials are user and admin. In phase1, whichever credential you use to login, we assume that you have logged in as ¡°admin¡± who has not yet chosen any courses yet. Therefore, after passing login, the timetable and the list of courses on left will be blank.
+
+1. Login View
+In the login view, we check a user¡¯s credential by username and password. If you check the ¡°Show Password¡±, the password you input will be showed so that you can see whether you input the correct password. Here, we assume that the two acceptable user names are ¡°user¡± and ¡°admin¡±, whose passwords are ¡°user¡± and ¡°admin¡± respectively. After inputting correct user name and password, click login and then you can shift to the timetable view. If you click the register button, the view will shift to the registration view.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+2. Registration View
+In the registration view, a user has to fill up the form provided to create a new account. Among all the fields, user must fill up the required area which is mentioned in the page. 
+Here are some restrictions for the input from user:
+	i. Email should be in the form of ¡°{sth}@{sth}.{sth}¡± where ¡®sth¡¯ can be any integers or letters with no space inside.
+	ii. Password and Password(retype) should have the same value and none of them should be empty.
+	iii. Year should be integers only.
+	iv. Users can choose as many programs as they like from the provided list of programs by clicking the add button. Note the programs will be 	stored in database instead of being hardcoded in phase2. Any duplicate choices will only be considered as 1 choice (no duplicate programs are 	added to the user object)
+	v. Age must be an integer
+After clicking the submit button, if all the fields have valid values, there will be a pop up window which means that a new user has been successfully created and the view will be changed back to the index view. If there is any error in the user input, there will be a pop up window telling the user which input from them is invalid. 
+Note that there is no user being created and stored in the server.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+3. Timetable View
+In the data.js, we hardcoded 9  courses and 4 users. To find out the courses, you can use the ¡°Search Course¡± bar in the timetable view. We assume that all course codes only contain upper-case letters. However, if your input contains lower-case letters, we can still view them as upper-case letters and find out the corresponding course codes.  As you input characters in ¡°Search Course¡± bar, all courses whose code starts with the current input will be listed in the dropdown menu. For each course in the dropdown menu, you can find two buttons called ¡°Add¡± and ¡°Remove¡±.
+
+When you click the add button, the course will be added to the course list and sections of this course will appear on the timetable. If conflict exists between the new course and previously selected course, an alert message will jump out to tell the user which courses conflict. In the timetable, different courses will be assigned different colors. Beside the title of each timetable, you can see the total workload of each semester. In phase 1, we assume that each course has a credit of 0.5.
+
+In the course list on left, you can see a list of courses which have already been added. On right of each course code, you can find a ¡°remove¡± button which you click to remove the corresponding course from the course list and the timetable. If you click on the list item without touching the remove button, view will shift to the course info view. Since data is hardcoded, we only show the info about CSC108F. 
+
+Furthermore, by clicking the icon on right top of the page, you can get a dropdown menu containing three links which are ¡°View profile¡±, ¡°Edit password¡± and ¡°Edit profile¡±. If you want to close this dropdown menu, click the icon again. In the dropdown menu, by clicking ¡°View profile¡±, you can shift to the profile view which shows information about the current user. (In phase 1, this user is hard coded as ¡°admin¡±.)  By clicking the ¡°Edit password¡±, you can shift to a view in which you input the new password and retype it to confirm. After submitting the new password, you can see an alert which tells you the user¡¯s name and shows you the new password.  By clicking the ¡°Edit profile¡± view, you can shift to the view in which you can input new profile info.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+4. Course Info View
+In the course info view, you can see information such as all section information (code, time, location and instructor), campus and description about a course. Below the course¡¯s information, you can find an area for rating a course and adding comment. And there is a list of users who is taking this course on right side. You could click on their icon to see their profile. After choosing lighten stars to define your rate score you can write down comment (or nothing inside), click button to submit. In addition, below the comment area, you can see comments which have been added to this course. After submission, you can also see your comment and rate under past comment section. Note that, the commits is ordered by time.
+
+Inside the course sections table, you code press add button to add this course section into your course list, which will result a update of user profile(course taken list) and timetable. For phase one with no interaction between pages, the add button is disable and message is log onto console to show this process.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+5. Admin View
+This view can only be accessed by our website administrator.  This view is been split into left part and right part. In left part, there are two tables can view and search among all users and courses. In user table, administrator can modify user¡¯s information and delete a user. In course table, admin can decide whether to delete a course or modify course information by clicking course¡¯s name. If admin clicks a course¡¯s name, that course¡¯s information will be displayed on right of webpage. Then admin can click course¡¯s code, name or description to modify a course. Also, admin can add or delete a course¡¯s section. Note a course must have at least one section. Last but not least, admin can create a new course 
+
+There is a drop down box when the mouse is move onto the icon on top right corner of all pages. And option of view profile, edit profile and change password is shown.
+User Profile View
+This view mainly shows the information of a user. Note that the user being displayed here is the user from data.js.
+
+If user want to change their password, they can click on the top right image icon and click on the drop down row ¡°change password¡± and the page will be changed to the change password page. 
+
+If user want to edit other user informations, they can click on the top right image icon and click on ¡°edit profile¡± and the page will be changed into the edit profile page.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+6. Change password:
+In this page, user is required to type in a new password twice. If the two password does not match, the user¡¯s password will not be updated. In the case of password are matched, there will be a pop up window telling the user that his/her password has been successfully updated. If the user want to go back to profile page or the edit profile page, they can click on the top right icon and click on the drop down item.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+7. Edit profile:
+In this page, there is a form waiting for user to modified. By default, the form is filled with current user¡¯s information. (In phase1, the user being used is hard coded). 
+
+There are some type in fields: ¡°email, username, age, selfIntro¡± and a selection box for choosing his/her program. If user want to add more programs he/she is taking now, he/she can click on the edit text beside the choosing box and there will be another box for choosing programs.
+If user modifies any of the contents in the form, his/her personal information will be updated and there is a pop up window telling the user that his/her profile has been successfully updated. If the user want to go back to profile page or the edit profile page, they can click on the top right icon and click on the drop down item.
+
+By click the mailbox on top right of all pages, the mailbox page is loaded.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+8. MailBox view:
+In this page, user could see their inbox mails and sent mails. Also sending and deleting mail options is provided by press send or delete button. To send a mail, you have to have receiver¡¯s user name, and type messages into the box. After press send, for now the message will appear in sent box. All mails is ordered by time. For Admin, there is one option to send to all users by type ALL inside send to box. If the user wants to delete the email, it will only influence the local data of this user, other user¡¯s inbox or send will not be influenced.
+There is also a navigation panel for easy locating send mail, inbox and sent sections. 
+
+------------------------------End of description about web pages------------------------------
+
+// All global data and classes are defined in data.js
+
+Notes: mememeow¡¯s contribution is not shown inside the github repo but inside commit histories ¡°Huan Wang¡± is shown as the id. They are same person. Sorry for the inconvenience.
+       zengchu2's contribution is not shown inside. Commit by "root" is shown indstead. Sorry for the inconvenience.

@@ -1,0 +1,25 @@
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top">
+    <a class="navbar-brand order-lg-0" href="/index">PECAN</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarButtons" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse order-lg-1" id="navbarButtons">
+        <ul class="navbar-nav ml-auto" id="navlist">
+            <li class="nav-item d-none">
+                <button id="adminModel" type="button" class="btn btn-md btn-success" onclick="window.location.href='admin'">Admin Model</button>
+            </li>
+            <li class="nav-item">
+                <a id="mailBoxLink" class="nav-link" href="/mailbox"><i class="far fa-envelope"></i>Mailbox</a>
+            </li>
+            <!--<form action="/changeDisplay" method="get">-->
+            <li class="nav-item">
+                <a id="profileLink" class="nav-link" href="/changeDisplay"><i class="far fa-user"></i>Profile</a>
+            </li>
+            <!--</form>-->
+            <li class="nav-item">
+                <a id="logOutLink" class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
